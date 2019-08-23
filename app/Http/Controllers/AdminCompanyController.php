@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Http\Requests\CompanyRequest;
+use App\Mail\OrderShipped;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Spatie\Permission\Models\Permission;
 
 class AdminCompanyController extends Controller
 {
@@ -14,10 +18,10 @@ class AdminCompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('IsAdmin');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('IsAdmin');
+//    }
 
 
     public function index()
@@ -43,6 +47,14 @@ class AdminCompanyController extends Controller
         //
 
         return view('company.create');
+
+    }
+
+    public function check(){
+
+
+//        Mail::to('umermalik4715@gmail.com')->send(new OrderShipped());
+//        echo 'ok';
 
     }
 
@@ -90,6 +102,7 @@ class AdminCompanyController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**

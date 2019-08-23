@@ -14,8 +14,9 @@
                         <div class="w3-container">
                             <h1 class="w3-animate-right " style="text-align:center">Companies</h1>
                             <div class="w3-tooltip">
-                                <h2 style="text-align:center"><a href="{{route('company.create')}}">Create New
-                                        Company</a></h2>
+                                @hasrole('admin')
+                                <h2 style="text-align:center"><a href="{{route('company.create')}}">Create New Company</a></h2>
+                                @endhasrole
                             </div>
                         </div>
 
@@ -30,6 +31,7 @@
                                 <th>Updated At</th>
                                 <th>Added By</th>
                                 <th>Branches</th>
+                                <th>Contacts</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -54,10 +56,20 @@
                                             <table>
                                                 <tr>
                                                     <td> <a href="{{ route('branch.show', $company->id) }}"><button type="button" class="alert-primary">View</button></a></td>
+                                                    @hasrole('admin')
                                                     <td> <a href="{{ route('branch.branchCreate', $company->id) }}"><button type="button" class="alert-primary">Add</button></a></td>
+                                                    @endhasrole
                                                 </tr>
                                             </table>
 
+                                        </td>
+                                        <td>
+                                            <ul>
+                                            @foreach($company->contacts->all() as $contact)
+                                                <li>{{$contact->phone}}</li>
+
+                                            @endforeach
+                                            </ul>
                                         </td>
 
                                     </tr>

@@ -15,29 +15,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-//Route::get('/a',function (){
-//    $user=\App\User::find(2);
-//    dd( $user->isAdmin());
-////    return
-////    return $user;
-//});
 
-Route::group(['middleware' => 'IsAdmin'], function() {
+    Route::group(['middleware'=>'role:admin'],function (){
 
-    route::resource('company','AdminCompanyController');
+        route::resource('company','AdminCompanyController');
+        route::resource('role','RoleController');
+        route::get('/user_roles','RoleController@user_roles_index')->name('role.user_roles');
+        route::post('/assign_role','RoleController@assign_role')->name('role.assign_role');
+        route::post('/delete_role','RoleController@delete_role')->name('role.delete_role');
 
-});
+    });
 
-Route::group(['middleware' => 'IsAdmin'], function() {
+
+//    using construct handle
+    route::get('/create_branch/{id}','BranchController@createBranch')->name('branch.branchCreate');
+//
 
     route::resource('branch','BranchController');
     route::get('/branch_detail/{id}','BranchController@detail')->name('branch.detail');
-    route::get('/create_branch/{id}','BranchController@createBranch')->name('branch.branchCreate');
 
-});
+
+    route::get('/check','AdminCompanyController@check');
+
+

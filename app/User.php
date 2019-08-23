@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use HasRoles;
+
 
     /**
      * The attributes that are mass assignable.
@@ -40,22 +43,18 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Company');
     }
-    public function role()
-    {
-        return $this->belongsTo('App\Role');
-    }
 
-    public function isAdmin()
-    {
-        if($this->role->name ==="admin")
-        {
-            return true;
-        }
-
-        return false;
-
-
-    }
+//    public function isAdmin()
+//    {
+//        if($this->role->name ==="admin")
+//        {
+//            return true;
+//        }
+//
+//        return false;
+//
+//
+//    }
 
 
 

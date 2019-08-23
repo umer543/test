@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth','IsAdmin']);
+        $this->middleware(['IsAdmin','auth'=>'verified']);
     }
 
     /**
@@ -25,11 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user=Auth::guard('web')->user();
-        $id = \auth()->user()->id;
-        $companies=Company::orderBy('id', 'DESC')->where('user_id','=',$id)->paginate(5);;
 
-//        dd($companies);
+        $companies=Company::orderBy('id', 'DESC')->paginate(5);;
         return view('company.index',compact('companies'));
     }
 }

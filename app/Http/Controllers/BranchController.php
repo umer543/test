@@ -16,7 +16,13 @@ class BranchController extends Controller
     public function index()
     {
         //
+        echo "ok";
 
+    }
+
+    public function __construct(){
+
+        $this->middleware('role:admin',['only'=> ['createBranch']]);
     }
 
     /**

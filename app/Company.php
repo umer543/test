@@ -21,8 +21,8 @@ class Company extends Model
         return $this->hasMany('App\Branch');
     }
 
-    public function timings(){
-        return $this->hasManyThrough('App\Timing','App\Branch');
+    public function contacts(){
+        return $this->hasManyThrough('App\Contact','App\Branch');
     }
 
 }
