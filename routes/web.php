@@ -18,6 +18,7 @@ Route::get('/', function () {
 //Auth::routes();
 Auth::routes(['verify' => true]);
 // its my branch code
+// 2nd branch code
 
 Route::get('/home', 'HomeController@index')->name('home');
 
