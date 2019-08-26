@@ -34,4 +34,10 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'nexmo' => [
+        'key' =>'fbd5336a',
+        'secret' =>'RbcS0mOgqivUhsCD',
+        'sms_from' => '+92 312 8984447',
+    ],
+
 ];

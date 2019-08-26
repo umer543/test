@@ -19,7 +19,15 @@
                                 @endhasrole
                             </div>
                         </div>
-
+                        @role('admin')
+                        <div>
+                            <h5>Notifications:</h5>
+                            @foreach(auth()->user()->unreadNotifications as $notification)
+                            <h7>{{$notification->data['company_name']}} Created</h7>
+                                {{  $notification->markAsRead() }}
+                            @endforeach
+                        </div>
+                        @endrole
                         <table class="table w3-table-all  w3-centered w3-hoverable w3-card w3-animate-bottom">
                             <thead>
                             <tr class="w3-red">

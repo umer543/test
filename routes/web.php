@@ -15,7 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
+Auth::routes();
+Route::get('/sms/send/', function(\Nexmo\Client $nexmo){
+    $message = $nexmo->message()->send([
+        'to' => '+923024652508',
+        'from' => '+923128984447',
+        'text' => 'Sending SMS from Laravel. yay!!!'
+    ]);
+    return true;
+});
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

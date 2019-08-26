@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Http\Requests\CompanyRequest;
 use App\Mail\OrderShipped;
+use App\Notifications\CompanyCreated;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ class AdminCompanyController extends Controller
         //
         /*$user=Auth::guard('web')->user();
         $id = Auth::guard('web')->id;*/
-        $companies=Company::orderBy('id', 'ASC')->paginate(5);
+        $companies= Company::orderBy('id', 'ASC')->paginate(5);
 
          //dd($companies);
         return view('company.index',compact('companies'));
@@ -46,7 +47,9 @@ class AdminCompanyController extends Controller
     {
         //
 
+
         return view('company.create');
+
 
     }
 
@@ -79,8 +82,12 @@ class AdminCompanyController extends Controller
                 $input['photo']=$name;
 
             }
-            $user->companies()->create($input);
+            $company= $user->companies()->create($input);
          //   Session::flash('create_company','user has been created');
+
+            $admin= User::find(2);
+
+            $admin->notify(new CompanyCreated($company));
 
             return redirect('/home');
 

@@ -44,6 +44,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Company');
     }
 
+    public function routeNotificationForNexmo($notification)
+    {
+        return "+923128984447";
+    }
+
 //    public function isAdmin()
 //    {
 //        if($this->role->name ==="admin")
