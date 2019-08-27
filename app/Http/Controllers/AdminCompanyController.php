@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Http\Requests\CompanyRequest;
+use App\Jobs\sendMarkdown;
 use App\Mail\OrderShipped;
 use App\Notifications\CompanyCreated;
 use App\Notifications\InvoicePaid;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -60,6 +62,21 @@ class AdminCompanyController extends Controller
 //        Mail::to('umermalik4715@gmail.com')->send(new OrderShipped());
 //        echo 'ok';
 
+        $users= User::all();
+
+
+        foreach ($users as $user) {
+
+            // using notification
+//            $user->notify((new InvoicePaid())->delay(Carbon::now()->addSeconds(10)));
+
+            // using job
+            sendMarkdown::dispatch($user)
+                ->delay(now()->addSeconds(10));
+
+        }
+
+        echo "Email Sent.";
     }
 
     /**
