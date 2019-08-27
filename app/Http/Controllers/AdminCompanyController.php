@@ -6,6 +6,7 @@ use App\Company;
 use App\Http\Requests\CompanyRequest;
 use App\Mail\OrderShipped;
 use App\Notifications\CompanyCreated;
+use App\Notifications\InvoicePaid;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,9 +86,10 @@ class AdminCompanyController extends Controller
             $company= $user->companies()->create($input);
          //   Session::flash('create_company','user has been created');
 
-            $admin= User::find(2);
+            $admin= User::find(1);
 
-            $admin->notify(new CompanyCreated($company));
+//            $admin->notify(new CompanyCreated($company));
+            $admin->notify(new InvoicePaid());
 
             return redirect('/home');
 

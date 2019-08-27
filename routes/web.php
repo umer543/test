@@ -16,14 +16,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/sms/send/', function(\Nexmo\Client $nexmo){
-    $message = $nexmo->message()->send([
-        'to' => '+923024652508',
-        'from' => '+923128984447',
-        'text' => 'Sending SMS from Laravel. yay!!!'
-    ]);
-    return true;
-});
+//Route::get('/sms/send/', function(\Nexmo\Client $nexmo){
+//    $message = $nexmo->message()->send([
+//        'to' => '+923024652508',
+//        'from' => '+923128984447',
+//        'text' => 'Sending SMS from Laravel. yay!!!'
+//    ]);
+//    return true;
+//});
 
 
 Auth::routes(['verify' => true]);

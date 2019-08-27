@@ -2,27 +2,24 @@
 
 namespace App\Notifications;
 
-use App\Company;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class CompanyCreated extends Notification
+class InvoicePaid extends Notification
 {
     use Queueable;
 
-    public $companies;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Company $company)
+    public function __construct()
     {
-        $this->companies= $company;
-
+        //
     }
 
     /**
@@ -33,7 +30,7 @@ class CompanyCreated extends Notification
      */
     public function via($notifiable)
     {
-        return ['database','nexmo'];
+        return ['mail'];
     }
 
     /**
@@ -44,10 +41,7 @@ class CompanyCreated extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        return (new MailMessage)->subject('Company Created')->markdown('mail.invoice.paid',['url'=> 'http://127.0.0.1:8000/home/']);
     }
 
     /**
@@ -60,17 +54,6 @@ class CompanyCreated extends Notification
     {
         return [
             //
-            'company_id' => $this->companies->id,
-            'company_name' => $this->companies->name,
         ];
     }
-
-    public function toNexmo($notifiable)
-    {
-        return (new NexmoMessage)
-            ->content('umer test massage');
-    }
-
-
-
 }
