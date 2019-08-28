@@ -103,10 +103,10 @@ class AdminCompanyController extends Controller
             $company= $user->companies()->create($input);
          //   Session::flash('create_company','user has been created');
 
-            $admin= User::find(1);
+//            $admin= User::find(1);
 
 //            $admin->notify(new CompanyCreated($company));
-            $admin->notify(new InvoicePaid());
+//            $admin->notify(new InvoicePaid());
 
             return redirect('/home');
 

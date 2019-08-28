@@ -28,9 +28,13 @@ Auth::routes();
 
 Auth::routes(['verify' => true]);
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/page', function (){
 
+    return view('page');
+});
 
 
     Route::group(['middleware'=>'role:admin'],function (){
