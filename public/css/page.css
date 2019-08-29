@@ -61,6 +61,7 @@
 #left-accordian{
     text-decoration: none;
     font-size: 18px;
+    margin-left: 10px;
 }
 
 #left-accordian span{
@@ -91,7 +92,7 @@
 
 .upper-span{
     padding: 5px;
-
+    font-size: 12px
 }
 
 .right-ico{
@@ -100,7 +101,7 @@
 
 .right-content{
     margin-top: 20px;
-    margin-left: 120px;
+    /*margin-left: 120px;*/
 }
 
 #upper-search{
@@ -111,21 +112,27 @@
 
 .line{
     border-width: 2px;
+
 }
 
-.message-section{
-    height: 460px;
-    width: 600px;
-}
+/*.message-section{*/
+/*    height: 460px;*/
+/*    width: 600px;*/
+/*}*/
 
 .lower-message{
     border: 2px solid;
     border-radius: 6px;
-    margin-left: 0px;
+    margin-top: 7px;
+    bottom: 0;
+    position: absolute;
+    padding: 0;
+    width: 96%;
+    vertical-align:bottom;
 }
 
 .lower-row{
-    width: 60%;
+    width: 50%;
     border: none;
     padding: 10px;
     /*border-radius: 6px;*/
@@ -136,4 +143,101 @@
     font-size: 18px;
     padding-top: 12px;
     padding-right: 10px;
+}
+.massage{
+    margin-left: 5px
+}
+.massage-content{
+    float: left;
+    margin: 0;
+    padding: 0;
+
+}
+.line{
+    float: left;
+    margin-top: 80px
+}
+.upper-main{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+#menu-search{
+    width: 90%;
+    margin-left: 7px;
+}
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #611f69;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav {
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+@media only screen and (max-width: 768px) {
+    #upper-search{
+        display: none;
+    }
+    #left{
+        display: none;
+    }
+
+    .upper-span{
+        font-size: 16px;
+    }
+
+    .mob-upper-heading{
+        font-size: 22px;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+    /*#menu-search{*/
+    /*    display: none;*/
+    /*}*/
+    #toggle-myBtn{
+        display: none;
+    }
 }
