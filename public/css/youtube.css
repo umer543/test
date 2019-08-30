@@ -1,0 +1,295 @@
+
+.head{
+    margin-bottom: 0;
+    padding: 8px;
+    background: white;
+
+}
+
+#upper-search{
+    padding: 5px;
+    width: 300px;
+    margin-top: 6px;
+}
+
+#search-btn{
+    background: white;
+    padding: 8px;
+    width: 70px;
+
+}
+
+#search-btn-2{
+    background: white;
+    padding: 8px;
+    width: 60px;
+    margin-top: 9px;
+    float: right;
+
+}
+
+.ok{
+    margin-top: 10px;
+}
+
+#sign-in-btn{
+    background: white;
+    padding: 8px;
+    width: 80px;
+    margin: 4px;
+    border: 2px solid darkblue;
+    color: blue;
+
+}
+
+#sign-in-btn-2{
+    background: white;
+    padding: 8px;
+    width: 80px;
+    margin: 4px;
+    border: 2px solid darkblue;
+    color: blue;
+    font-size: 12px;
+
+}
+
+
+.upper-span{
+    margin-top: 19px;
+    margin-left: 25px;
+    font-size: 20px;
+}
+
+.left-1st{
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+
+.left-span{
+    font-size: 15px;
+    /*background: #00bcd4;*/
+    margin-left: 27px;
+}
+
+.left-ico{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+
+
+.left{
+
+    margin-top: 8px;
+    /*height: 580px;*/
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+.right{
+    padding-left: 30px;
+    /*height: 600px;*/
+    /*overflow-y: scroll;*/
+}
+
+.video-heading{
+    margin-top: 25px;
+    margin-left: 12px;
+    /*margin-bottom: 17px;*/
+}
+
+.video-thumbnail{
+    margin-top: 20px;
+}
+
+
+.video-title{
+    margin-top: 7px;
+    font-size: 15px;
+    width: 80%;
+}
+
+.channel{
+    color: #606060;
+    margin-bottom: 0;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav {
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+
+/* overlay btn*/
+
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.openBtn:hover {
+    background: #bbb;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+
+/*overlay close*/
+
+
+
+
+@media only screen and (min-width: 1248px) {
+
+    #toggle-myBtn{
+        display: none;
+    }
+
+    #search-btn-2{
+        display: none;
+    }
+
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media only screen and (max-width: 1248px) {
+    #upper-search{
+        display: none;
+    }
+
+
+    #search-btn{
+    display: none;
+    }
+
+    #left{
+        display: none;
+    }
+
+    #sign-in-btn{
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .ok{
+        display: none;
+    }
+
+    /*.col-12{*/
+    /*    margin-left: 0px;*/
+    /*}*/
+
+    #sign-in-btn{
+        display: none;
+    }
+
+    .video-component{
+        width: 100%;
+        padding-left: 0;
+        /*padding-right: 0;*/
+    }
+
+    .video-thumbnail{
+        width: 100%;
+    }
+}

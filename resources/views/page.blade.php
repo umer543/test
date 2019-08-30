@@ -6,10 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-    {{--    <link href="{{asset('css/w3.css')}}" rel="stylesheet">--}}
-    {{--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">--}}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"
           type="text/css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -18,7 +14,6 @@
 
     <link href="{{ asset('css/page.css') }}" rel="stylesheet">
 
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
     <script type="text/javascript">
 
     function openNav() {
@@ -39,10 +34,6 @@
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-{{--            <a href="#">About</a>--}}
-{{--            <a href="#">Services</a>--}}
-{{--            <a href="#">Clients</a>--}}
-{{--            <a href="#">Contact</a>--}}
             <div class="left-heading">
                 <div class="row">
                     <div class="col-10">
@@ -124,11 +115,6 @@
                     <div class="col-2"><span class="glyphicon glyphicon-bell left-noti"></span></div>
                 </div>
             </div>
-{{--            <div class="">--}}
-{{--                 <span class="upper-span">--}}
-{{--                      <input type="text" placeholder="Search.." name="search" id="menu-search">--}}
-{{--                 </span>--}}
-{{--            </div>--}}
             <div class="thread">
                 <div class="row">
                     <i class="far fa-comment"></i>
